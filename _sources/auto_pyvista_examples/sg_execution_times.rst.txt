@@ -1,0 +1,19 @@
+
+:orphan:
+
+.. _sphx_glr_auto_pyvista_examples_sg_execution_times:
+
+
+Computation times
+=================
+**00:11.890** total execution time for **auto_pyvista_examples** files:
+
++-----------------------------------------------------------------------------------+-----------+----------+
+| :ref:`sphx_glr_auto_pyvista_examples_plot_collisions.py` (``plot_collisions.py``) | 00:05.292 | 47.3 MB  |
++-----------------------------------------------------------------------------------+-----------+----------+
+| :ref:`sphx_glr_auto_pyvista_examples_plot_lighting.py` (``plot_lighting.py``)     | 00:03.493 | 51.0 MB  |
++-----------------------------------------------------------------------------------+-----------+----------+
+| :ref:`sphx_glr_auto_pyvista_examples_plot_glyphs.py` (``plot_glyphs.py``)         | 00:02.573 | 256.9 MB |
++-----------------------------------------------------------------------------------+-----------+----------+
+| :ref:`sphx_glr_auto_pyvista_examples_plot_ray_trace.py` (``plot_ray_trace.py``)   | 00:00.531 | 8.1 MB   |
++-----------------------------------------------------------------------------------+-----------+----------+

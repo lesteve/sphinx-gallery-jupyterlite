@@ -1,0 +1,13 @@
+
+:orphan:
+
+.. _sphx_glr_tutorials_sg_execution_times:
+
+
+Computation times
+=================
+**00:01.102** total execution time for **tutorials** files:
+
++-------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_tutorials_plot_parse.py` (``plot_parse.py``) | 00:01.102 | 8.0 MB |
++-------------------------------------------------------------+-----------+--------+
