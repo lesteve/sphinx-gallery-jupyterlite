@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sphinx_gallery.directives &mdash; Sphinx-Gallery 0.12.0.dev0-git documentation</title>
@@ -20,15 +20,14 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/jupyterlite_sphinx.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="sphinx_gallery.utils.optipng" href="sphinx_gallery.utils.optipng.html" />
-    <link rel="prev" title="sphinx_gallery.binder" href="sphinx_gallery.binder.html" /> 
+    <link rel="prev" title="sphinx_gallery.interactive_example" href="sphinx_gallery.interactive_example.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -103,11 +102,23 @@
 <li class="toctree-l2"><a class="reference internal" href="sphinx_gallery.notebook.html">sphinx_gallery.notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx_gallery.downloads.html">sphinx_gallery.downloads</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx_gallery.sorting.html">sphinx_gallery.sorting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_gallery.binder.html">sphinx_gallery.binder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_gallery.interactive_example.html">sphinx_gallery.interactive_example</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sphinx_gallery.directives</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#custom-sphinx-directives">Custom Sphinx directives</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-sphinx-directives">Custom Sphinx directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.depart_imgsg_html"><code class="docutils literal notranslate"><span class="pre">depart_imgsg_html()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.depart_imgsg_latex"><code class="docutils literal notranslate"><span class="pre">depart_imgsg_latex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.directive_boolean"><code class="docutils literal notranslate"><span class="pre">directive_boolean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.imagesg_addnode"><code class="docutils literal notranslate"><span class="pre">imagesg_addnode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.visit_imgsg_html"><code class="docutils literal notranslate"><span class="pre">visit_imgsg_html()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.visit_imgsg_latex"><code class="docutils literal notranslate"><span class="pre">visit_imgsg_latex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.visit_sg_other"><code class="docutils literal notranslate"><span class="pre">visit_sg_other()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.ImageSg"><code class="docutils literal notranslate"><span class="pre">ImageSg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.MiniGallery"><code class="docutils literal notranslate"><span class="pre">MiniGallery</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.directives.imgsgnode"><code class="docutils literal notranslate"><span class="pre">imgsgnode</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -158,11 +169,12 @@
            <div itemprop="articleBody">
              
   <section id="module-sphinx_gallery.directives">
-<span id="sphinx-gallery-directives"></span><h1>sphinx_gallery.directives<a class="headerlink" href="#module-sphinx_gallery.directives" title="Permalink to this headline">¶</a></h1>
+<span id="sphinx-gallery-directives"></span><h1>sphinx_gallery.directives<a class="headerlink" href="#module-sphinx_gallery.directives" title="Permalink to this heading">¶</a></h1>
 <section id="custom-sphinx-directives">
-<h2>Custom Sphinx directives<a class="headerlink" href="#custom-sphinx-directives" title="Permalink to this headline">¶</a></h2>
+<h2>Custom Sphinx directives<a class="headerlink" href="#custom-sphinx-directives" title="Permalink to this heading">¶</a></h2>
+</section>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sphinx_gallery.directives.depart_imgsg_html">
 <span class="sig-prename descclassname"><span class="pre">sphinx_gallery.directives.</span></span><span class="sig-name descname"><span class="pre">depart_imgsg_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/directives.html#depart_imgsg_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.directives.depart_imgsg_html" title="Permalink to this definition">¶</a></dt>
@@ -200,7 +212,7 @@
 
 </section>
 <section id="classes">
-<span id="sphx-glr-backref-sphinx-gallery-directives-visit-sg-other"></span><h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<span id="sphx-glr-backref-sphinx-gallery-directives-visit-sg-other"></span><h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_gallery.directives.</span></span><span class="sig-name descname"><span class="pre">ImageSg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/directives.html#ImageSg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.directives.ImageSg" title="Permalink to this definition">¶</a></dt>
@@ -222,6 +234,36 @@ used with the <cite>image_srcset</cite> configuration option.</p>
     <span class="n">class</span><span class="o">=</span><span class="s2">&quot;sphx-glr-single-img&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg.final_argument_whitespace">
+<span class="sig-name descname"><span class="pre">final_argument_whitespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_gallery.directives.ImageSg.final_argument_whitespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>May the final argument contain whitespace?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg.has_content">
+<span class="sig-name descname"><span class="pre">has_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_gallery.directives.ImageSg.has_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>May the directive have content?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'alt':</span> <span class="pre">&lt;function</span> <span class="pre">unchanged&gt;,</span> <span class="pre">'class':</span> <span class="pre">&lt;function</span> <span class="pre">class_option&gt;,</span> <span class="pre">'srcset':</span> <span class="pre">&lt;function</span> <span class="pre">unchanged&gt;}</span></em><a class="headerlink" href="#sphinx_gallery.directives.ImageSg.option_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg.optional_arguments">
+<span class="sig-name descname"><span class="pre">optional_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#sphinx_gallery.directives.ImageSg.optional_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of optional arguments after the required arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.ImageSg.required_arguments">
+<span class="sig-name descname"><span class="pre">required_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sphinx_gallery.directives.ImageSg.required_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of required directive arguments.</p>
+</dd></dl>
+
 </dd></dl>
 
 <span class="target" id="sphx-glr-backref-sphinx-gallery-directives-imagesg"></span><dl class="py class">
@@ -239,6 +281,30 @@ default text.</p></li>
 <li><p><cite>heading-level</cite> specifies the heading level of the heading as a single
 character.  If omitted, the default heading level is <cite>‘^’</cite>.</p></li>
 </ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.MiniGallery.final_argument_whitespace">
+<span class="sig-name descname"><span class="pre">final_argument_whitespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#sphinx_gallery.directives.MiniGallery.final_argument_whitespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>May the final argument contain whitespace?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.MiniGallery.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'add-heading':</span> <span class="pre">&lt;function</span> <span class="pre">unchanged&gt;,</span> <span class="pre">'heading-level':</span> <span class="pre">&lt;function</span> <span class="pre">single_char_or_unicode&gt;}</span></em><a class="headerlink" href="#sphinx_gallery.directives.MiniGallery.option_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.MiniGallery.optional_arguments">
+<span class="sig-name descname"><span class="pre">optional_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#sphinx_gallery.directives.MiniGallery.optional_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of optional arguments after the required arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_gallery.directives.MiniGallery.required_arguments">
+<span class="sig-name descname"><span class="pre">required_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sphinx_gallery.directives.MiniGallery.required_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of required directive arguments.</p>
+</dd></dl>
+
 </dd></dl>
 
 <span class="target" id="sphx-glr-backref-sphinx-gallery-directives-minigallery"></span><dl class="py class">
@@ -248,13 +314,12 @@ character.  If omitted, the default heading level is <cite>‘^’</cite>.</p></
 
 <span class="target" id="sphx-glr-backref-sphinx-gallery-directives-imgsgnode"></span></section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="sphinx_gallery.binder.html" class="btn btn-neutral float-left" title="sphinx_gallery.binder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sphinx_gallery.interactive_example.html" class="btn btn-neutral float-left" title="sphinx_gallery.interactive_example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="sphinx_gallery.utils.optipng.html" class="btn btn-neutral float-right" title="sphinx_gallery.utils.optipng" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

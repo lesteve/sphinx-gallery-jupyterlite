@@ -19,9 +19,8 @@
   <![endif]-->
   
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/jupyterlite_sphinx.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -167,9 +166,12 @@
 <span class="kn">from</span> <span class="nn">.docs_resolv</span> <span class="kn">import</span> <span class="n">embed_code_links</span>
 <span class="kn">from</span> <span class="nn">.downloads</span> <span class="kn">import</span> <span class="n">generate_zipfiles</span>
 <span class="kn">from</span> <span class="nn">.sorting</span> <span class="kn">import</span> <span class="n">NumberOfCodeLinesSortKey</span>
-<span class="kn">from</span> <span class="nn">.binder</span> <span class="kn">import</span> <span class="n">copy_binder_files</span><span class="p">,</span> <span class="n">check_binder_conf</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">copy_binder_files</span><span class="p">,</span> <span class="n">check_binder_conf</span><span class="p">,</span> <span class="n">check_jupyterlite_conf</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">configure_jupyterlite_sphinx</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">create_jupyterlite_contents</span>
 <span class="kn">from</span> <span class="nn">.directives</span> <span class="kn">import</span> <span class="n">MiniGallery</span><span class="p">,</span> <span class="n">ImageSg</span><span class="p">,</span> <span class="n">imagesg_addnode</span>
-
 
 <span class="n">_KNOWN_CSS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sg_gallery&#39;</span><span class="p">,</span> <span class="s1">&#39;sg_gallery-binder&#39;</span><span class="p">,</span> <span class="s1">&#39;sg_gallery-dataframe&#39;</span><span class="p">,</span>
               <span class="s1">&#39;sg_gallery-rendered-html&#39;</span><span class="p">)</span>
@@ -192,7 +194,6 @@
     <span class="s1">&#39;within_subsection_order&#39;</span><span class="p">:</span> <span class="n">NumberOfCodeLinesSortKey</span><span class="p">,</span>
     <span class="s1">&#39;gallery_dirs&#39;</span><span class="p">:</span> <span class="s1">&#39;auto_examples&#39;</span><span class="p">,</span>
     <span class="s1">&#39;backreferences_dir&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="s1">&#39;jupyterlite&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s1">&#39;doc_module&#39;</span><span class="p">:</span> <span class="p">(),</span>
     <span class="s1">&#39;exclude_implicit_doc&#39;</span><span class="p">:</span> <span class="p">{},</span>
     <span class="s1">&#39;reference_url&#39;</span><span class="p">:</span> <span class="p">{},</span>
@@ -203,7 +204,7 @@
     <span class="c1"># &#39;plot_gallery&#39; also accepts strings that evaluate to a bool, e.g. &quot;True&quot;,</span>
     <span class="c1"># &quot;False&quot;, &quot;1&quot;, &quot;0&quot; so that they can be easily set via command line</span>
     <span class="c1"># switches of sphinx-build</span>
-    <span class="s1">&#39;plot_gallery&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;plot_gallery&#39;</span><span class="p">:</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span>
     <span class="s1">&#39;download_all_examples&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s1">&#39;abort_on_example_error&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s1">&#39;only_warn_on_example_error&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
@@ -215,6 +216,7 @@
     <span class="s1">&#39;thumbnail_size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">280</span><span class="p">),</span>  <span class="c1"># Default CSS does 0.4 scaling (160, 112)</span>
     <span class="s1">&#39;min_reported_time&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s1">&#39;binder&#39;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s1">&#39;jupyterlite&#39;</span><span class="p">:</span> <span class="p">{},</span>
     <span class="s1">&#39;promote_jupyter_magic&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s1">&#39;image_scrapers&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,),</span>
     <span class="s1">&#39;compress_images&#39;</span><span class="p">:</span> <span class="p">(),</span>
@@ -505,6 +507,10 @@
 
     <span class="c1"># binder</span>
     <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;binder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_binder_conf</span><span class="p">(</span><span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;binder&#39;</span><span class="p">])</span>
+
+    <span class="c1"># jupyterlite</span>
+    <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_jupyterlite_conf</span><span class="p">(</span>
+        <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;css&#39;</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="s1">&#39;gallery_conf[&quot;css&quot;] must be list or tuple, got </span><span class="si">%r</span><span class="s1">&#39;</span>
@@ -1290,6 +1296,11 @@
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;plot_gallery&#39;</span><span class="p">,</span> <span class="s1">&#39;abort_on_example_error&#39;</span><span class="p">]:</span>
         <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">get_default_config_value</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="s1">&#39;html&#39;</span><span class="p">)</span>
 
+    <span class="c1"># To be on the safe side, set small priority value, so that</span>
+    <span class="c1"># configure_jupyterlite_sphinx is called before jupyterlite_sphinx</span>
+    <span class="c1"># config-inited</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;config-inited&#39;</span><span class="p">,</span> <span class="n">configure_jupyterlite_sphinx</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="s1">&#39;sphinx.ext.autodoc&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span><span class="p">:</span>
         <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;autodoc-process-docstring&#39;</span><span class="p">,</span> <span class="n">touch_empty_backreferences</span><span class="p">)</span>
         <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;autodoc-process-docstring&#39;</span><span class="p">,</span> <span class="n">write_api_entries</span><span class="p">)</span>
@@ -1303,6 +1314,8 @@
 
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;builder-inited&#39;</span><span class="p">,</span> <span class="n">generate_gallery_rst</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;build-finished&#39;</span><span class="p">,</span> <span class="n">copy_binder_files</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;build-finished&#39;</span><span class="p">,</span> <span class="n">create_jupyterlite_contents</span><span class="p">)</span>
+
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;build-finished&#39;</span><span class="p">,</span> <span class="n">summarize_failing_examples</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;build-finished&#39;</span><span class="p">,</span> <span class="n">embed_code_links</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;build-finished&#39;</span><span class="p">,</span> <span class="n">clean_files</span><span class="p">)</span>

@@ -137,23 +137,6 @@ specific features of Sphinx-Gallery.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates a Seaborn plot. Figures produced Matplotlib **and** by any package th...">
-
-.. only:: html
-
-  .. image:: /auto_examples/images/thumb/sphx_glr_plot_4_seaborn_thumb.png
-    :alt: Seaborn example
-
-  :ref:`sphx_glr_auto_examples_plot_4_seaborn.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Seaborn example</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to provide a figure that is displayed as the thumbnail. This is d...">
 
 .. only:: html
@@ -251,7 +234,6 @@ specific features of Sphinx-Gallery.
    /auto_examples/plot_2_seaborn
    /auto_examples/plot_3_capture_repr
    /auto_examples/plot_4_choose_thumbnail
-   /auto_examples/plot_4_seaborn
    /auto_examples/plot_4b_provide_thumbnail
    /auto_examples/plot_5_unicode_everywhere
    /auto_examples/plot_6_function_identifier

@@ -71,9 +71,9 @@ Single line segment ray tracing for PolyData objects.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.531 seconds)
+   **Total running time of the script:** ( 0 minutes  0.538 seconds)
 
-**Estimated memory usage:**  8 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_pyvista_examples_plot_ray_trace.py:
@@ -94,8 +94,8 @@ Single line segment ray tracing for PolyData objects.
 
     .. container:: lite-badge
 
-      .. image:: images/jupyterlite_badge.svg
-        :target: ../lite/lab/index.html?path=auto_pyvista_examples/plot_ray_trace.ipynb
+      .. image:: images/jupyterlite_badge_logo.svg
+        :target: ../lite/lab/?path=auto_pyvista_examples/plot_ray_trace.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 

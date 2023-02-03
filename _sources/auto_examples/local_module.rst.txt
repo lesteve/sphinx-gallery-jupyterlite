@@ -58,8 +58,8 @@ This module is imported in the example 'Plotting the exponential function'
 
     .. container:: lite-badge
 
-      .. image:: images/jupyterlite_badge.svg
-        :target: ../lite/lab/index.html?path=auto_examples/local_module.ipynb
+      .. image:: images/jupyterlite_badge_logo.svg
+        :target: ../lite/lab/?path=auto_examples/local_module.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 

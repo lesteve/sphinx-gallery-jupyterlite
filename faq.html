@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Frequently Asked Questions &mdash; Sphinx-Gallery 0.12.0.dev0-git documentation</title>
@@ -20,9 +20,8 @@
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/jupyterlite_sphinx.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -138,17 +137,17 @@
            <div itemprop="articleBody">
              
   <section id="frequently-asked-questions">
-<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
-<div class="contents local topic" id="contents">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this heading">¶</a></h1>
+<nav class="contents local" id="contents">
 <p class="topic-title"><strong>Contents</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#why-is-file-not-defined-what-can-i-use" id="id1">Why is <cite>__file__</cite> not defined? What can I use?</a></p></li>
 <li><p><a class="reference internal" href="#why-am-i-getting-text-output-for-matplotlib-functions" id="id2">Why am I getting text output for Matplotlib functions?</a></p></li>
 <li><p><a class="reference internal" href="#why-has-my-thumbnail-appearance-changed" id="id3">Why has my thumbnail appearance changed?</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="why-is-file-not-defined-what-can-i-use">
-<h2><a class="toc-backref" href="#id1">Why is <cite>__file__</cite> not defined? What can I use?</a><a class="headerlink" href="#why-is-file-not-defined-what-can-i-use" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Why is <cite>__file__</cite> not defined? What can I use?</a><a class="headerlink" href="#why-is-file-not-defined-what-can-i-use" title="Permalink to this heading">¶</a></h2>
 <p>The global <cite>__file__</cite> variable defined by Python when running scripts
 is not defined on Jupyter notebooks. Since Sphinx-Gallery supports
 notebook styled examples and also exports to Jupyter notebooks we
@@ -164,7 +163,7 @@ their source directory.</p>
 </div>
 </section>
 <section id="why-am-i-getting-text-output-for-matplotlib-functions">
-<h2><a class="toc-backref" href="#id2">Why am I getting text output for Matplotlib functions?</a><a class="headerlink" href="#why-am-i-getting-text-output-for-matplotlib-functions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Why am I getting text output for Matplotlib functions?</a><a class="headerlink" href="#why-am-i-getting-text-output-for-matplotlib-functions" title="Permalink to this heading">¶</a></h2>
 <p>The output capturing behavior of Sphinx-Gallery changed with Sphinx-Gallery
 v0.5.0. Previous to v0.5.0, only data directed to standard output (e.g., only
 Matplotlib figures) was captured. In, v0.5.0, the configuration
@@ -185,7 +184,7 @@ prior to v0.5.0. This will also prevent you from getting any other unwanted
 output that did not occur prior to v0.5.0.</p>
 </section>
 <section id="why-has-my-thumbnail-appearance-changed">
-<h2><a class="toc-backref" href="#id3">Why has my thumbnail appearance changed?</a><a class="headerlink" href="#why-has-my-thumbnail-appearance-changed" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Why has my thumbnail appearance changed?</a><a class="headerlink" href="#why-has-my-thumbnail-appearance-changed" title="Permalink to this heading">¶</a></h2>
 <p>The DOM structure of thumbnails was refactored in order to make them responsive
 and aligned on a css grid. These changes might make your existing custom css
 obsolete. You can read our

@@ -119,9 +119,9 @@ Plot 2
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.165 seconds)
+   **Total running time of the script:** ( 0 minutes  2.869 seconds)
 
-**Estimated memory usage:**  8 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_4b_provide_thumbnail.py:
@@ -142,8 +142,8 @@ Plot 2
 
     .. container:: lite-badge
 
-      .. image:: images/jupyterlite_badge.svg
-        :target: ../lite/lab/index.html?path=auto_examples/plot_4b_provide_thumbnail.ipynb
+      .. image:: images/jupyterlite_badge_logo.svg
+        :target: ../lite/lab/?path=auto_examples/plot_4b_provide_thumbnail.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 

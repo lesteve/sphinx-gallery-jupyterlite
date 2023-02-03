@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Providing a figure for the thumbnail image &mdash; Sphinx-Gallery 0.12.0.dev0-git documentation</title>
@@ -20,15 +20,14 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/jupyterlite_sphinx.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using Unicode everywhere 🤗" href="plot_5_unicode_everywhere.html" />
-    <link rel="prev" title="Seaborn example" href="plot_4_seaborn.html" /> 
+    <link rel="prev" title="Choosing the thumbnail figure" href="plot_4_choose_thumbnail.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -92,7 +91,6 @@
 <li class="toctree-l3"><a class="reference internal" href="plot_2_seaborn.html">Seaborn example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_3_capture_repr.html">Capturing output representations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_4_choose_thumbnail.html">Choosing the thumbnail figure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_4_seaborn.html">Seaborn example</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Providing a figure for the thumbnail image</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#plot-1">Plot 1</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#plot-2">Plot 2</a></li>
@@ -162,7 +160,7 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="providing-a-figure-for-the-thumbnail-image">
-<span id="sphx-glr-auto-examples-plot-4b-provide-thumbnail-py"></span><h1>Providing a figure for the thumbnail image<a class="headerlink" href="#providing-a-figure-for-the-thumbnail-image" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-plot-4b-provide-thumbnail-py"></span><h1>Providing a figure for the thumbnail image<a class="headerlink" href="#providing-a-figure-for-the-thumbnail-image" title="Permalink to this heading">¶</a></h1>
 <p>This example demonstrates how to provide a figure that is displayed as the
 thumbnail. This is done by specifying the keyword-value pair
 <code class="docutils literal notranslate"><span class="pre">sphinx_gallery_thumbnail_path</span> <span class="pre">=</span> <span class="pre">'fig</span> <span class="pre">path'</span></code> as a comment somewhere below the
@@ -179,7 +177,7 @@ figure <code class="docutils literal notranslate"><span class="pre">demo.png</sp
 </pre></div>
 </div>
 <section id="plot-1">
-<h2>Plot 1<a class="headerlink" href="#plot-1" title="Permalink to this headline">¶</a></h2>
+<h2>Plot 1<a class="headerlink" href="#plot-1" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y1</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin&#39;</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y2</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cos&#39;</span><span class="p">)</span>
@@ -189,7 +187,7 @@ figure <code class="docutils literal notranslate"><span class="pre">demo.png</sp
 </div>
 <img src="../_images/sphx_glr_plot_4b_provide_thumbnail_001.png" srcset="../_images/sphx_glr_plot_4b_provide_thumbnail_001.png, ../_images/sphx_glr_plot_4b_provide_thumbnail_001_2_00x.png 2.00x" alt="plot 4b provide thumbnail" class = "sphx-glr-single-img"/></section>
 <section id="plot-2">
-<h2>Plot 2<a class="headerlink" href="#plot-2" title="Permalink to this headline">¶</a></h2>
+<h2>Plot 2<a class="headerlink" href="#plot-2" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y1</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin&#39;</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y2</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cos&#39;</span><span class="p">)</span>
@@ -199,14 +197,14 @@ figure <code class="docutils literal notranslate"><span class="pre">demo.png</sp
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_4b_provide_thumbnail_002.png" srcset="../_images/sphx_glr_plot_4b_provide_thumbnail_002.png, ../_images/sphx_glr_plot_4b_provide_thumbnail_002_2_00x.png 2.00x" alt="plot 4b provide thumbnail" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.165 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  8 MB</p>
+<img src="../_images/sphx_glr_plot_4b_provide_thumbnail_002.png" srcset="../_images/sphx_glr_plot_4b_provide_thumbnail_002.png, ../_images/sphx_glr_plot_4b_provide_thumbnail_002_2_00x.png 2.00x" alt="plot 4b provide thumbnail" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.869 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-4b-provide-thumbnail-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/sphinx-gallery/sphinx-gallery.github.io/master?urlpath=lab/tree/notebooks/auto_examples/plot_4b_provide_thumbnail.ipynb"><img alt="Launch binder" src="../_images/binder_badge_logo.svg" width="150px" /></a>
 </div>
 <div class="lite-badge docutils container">
-<a class="reference external image-reference" href="../lite/lab/index.html?path=auto_examples/plot_4b_provide_thumbnail.ipynb"><img alt="Launch JupyterLite" src="../_images/jupyterlite_badge.svg" width="150px" /></a>
+<a class="reference external image-reference" href="../lite/lab/?path=auto_examples/plot_4b_provide_thumbnail.ipynb"><img alt="Launch JupyterLite" src="../_images/jupyterlite_badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fce57a905dfa7ba7b9d94290fc199c75/plot_4b_provide_thumbnail.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_4b_provide_thumbnail.py</span></code></a></p>
@@ -223,7 +221,7 @@ figure <code class="docutils literal notranslate"><span class="pre">demo.png</sp
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="plot_4_seaborn.html" class="btn btn-neutral float-left" title="Seaborn example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_4_choose_thumbnail.html" class="btn btn-neutral float-left" title="Choosing the thumbnail figure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="plot_5_unicode_everywhere.html" class="btn btn-neutral float-right" title="Using Unicode everywhere 🤗" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

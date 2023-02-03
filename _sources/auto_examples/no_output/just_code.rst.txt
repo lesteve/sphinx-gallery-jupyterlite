@@ -61,8 +61,8 @@ example. Note that no output is capture as this file is not executed.
 
     .. container:: lite-badge
 
-      .. image:: images/jupyterlite_badge.svg
-        :target: ../lite/lab/index.html?path=auto_examples/no_output/just_code.ipynb
+      .. image:: images/jupyterlite_badge_logo.svg
+        :target: ../lite/lab/?path=auto_examples/no_output/just_code.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
