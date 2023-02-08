@@ -184,7 +184,7 @@
 
 <span class="kn">from</span> <span class="nn">.notebook</span> <span class="kn">import</span> <span class="n">jupyter_notebook</span><span class="p">,</span> <span class="n">save_notebook</span>
 <span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">check_binder_conf</span><span class="p">,</span> <span class="n">gen_binder_rst</span>
-<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">gen_jupyterlite_rst</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">check_jupyterlite_conf</span><span class="p">,</span> <span class="n">gen_jupyterlite_rst</span>
 
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">sphinx</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;sphinx-gallery&#39;</span><span class="p">)</span>
@@ -1360,11 +1360,29 @@
     <span class="n">ref_fname</span> <span class="o">=</span> <span class="n">example_fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
 
     <span class="n">binder_conf</span> <span class="o">=</span> <span class="n">check_binder_conf</span><span class="p">(</span><span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;binder&#39;</span><span class="p">))</span>
+    <span class="n">is_binder_enabled</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">binder_conf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
-    <span class="n">binder_text</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot; or to run this example in your browser via Binder&quot;</span>
-                   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">binder_conf</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">jupyterlite_conf</span> <span class="o">=</span> <span class="n">check_jupyterlite_conf</span><span class="p">(</span><span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+                                              <span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">))</span>
+
+    <span class="n">is_jupyterlite_enabled</span> <span class="o">=</span> <span class="n">jupyterlite_conf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">gallery_conf</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">jupyterlite_conf</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">interactive_example_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_binder_enabled</span> <span class="ow">or</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
+        <span class="n">interactive_example_text</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="s2">&quot; or to run this example in your browser via &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">is_binder_enabled</span> <span class="ow">and</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
+        <span class="n">interactive_example_text</span> <span class="o">+=</span> <span class="s2">&quot;JupyterLite or Binder&quot;</span>
+    <span class="k">elif</span> <span class="n">is_binder_enabled</span><span class="p">:</span>
+        <span class="n">interactive_example_text</span> <span class="o">+=</span> <span class="s2">&quot;Binder&quot;</span>
+    <span class="k">elif</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
+        <span class="n">interactive_example_text</span> <span class="o">+=</span> <span class="s2">&quot;JupyterLite&quot;</span>
+
     <span class="n">example_rst</span> <span class="o">=</span> <span class="n">EXAMPLE_HEADER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">example_fname</span><span class="p">,</span> <span class="n">ref_fname</span><span class="p">,</span> <span class="n">binder_text</span><span class="p">)</span> <span class="o">+</span> <span class="n">example_rst</span>
+        <span class="n">example_fname</span><span class="p">,</span> <span class="n">ref_fname</span><span class="p">,</span> <span class="n">interactive_example_text</span><span class="p">)</span> <span class="o">+</span> <span class="n">example_rst</span>
 
     <span class="k">if</span> <span class="n">time_elapsed</span> <span class="o">&gt;=</span> <span class="n">gallery_conf</span><span class="p">[</span><span class="s2">&quot;min_reported_time&quot;</span><span class="p">]:</span>
         <span class="n">time_m</span><span class="p">,</span> <span class="n">time_s</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time_elapsed</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
@@ -1378,13 +1396,13 @@
 
     <span class="c1"># Generate a binder URL if specified</span>
     <span class="n">binder_badge_rst</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">binder_conf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_binder_enabled</span><span class="p">:</span>
         <span class="n">binder_badge_rst</span> <span class="o">+=</span> <span class="n">gen_binder_rst</span><span class="p">(</span><span class="n">example_file</span><span class="p">,</span> <span class="n">binder_conf</span><span class="p">,</span>
                                            <span class="n">gallery_conf</span><span class="p">)</span>
         <span class="n">binder_badge_rst</span> <span class="o">=</span> <span class="n">indent</span><span class="p">(</span><span class="n">binder_badge_rst</span><span class="p">,</span> <span class="s1">&#39;  &#39;</span><span class="p">)</span>  <span class="c1"># need an extra two</span>
 
     <span class="n">jupyterlite_rst</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
         <span class="n">jupyterlite_rst</span> <span class="o">=</span> <span class="n">gen_jupyterlite_rst</span><span class="p">(</span><span class="n">example_file</span><span class="p">,</span> <span class="n">gallery_conf</span><span class="p">)</span>
         <span class="n">jupyterlite_rst</span> <span class="o">=</span> <span class="n">indent</span><span class="p">(</span><span class="n">jupyterlite_rst</span><span class="p">,</span> <span class="s1">&#39;  &#39;</span><span class="p">)</span>  <span class="c1"># need an extra two</span>
 

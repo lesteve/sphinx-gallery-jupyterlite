@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2023-02-03T13:32:30.946602Z",
+      "created": "2023-02-08T20:28:26.346831Z",
       "format": null,
-      "last_modified": "2023-02-03T13:32:02.666566Z",
+      "last_modified": "2023-02-08T20:27:54.150795Z",
       "mimetype": null,
       "name": "plot_3d.ipynb",
       "path": "auto_mayavi_examples/plot_3d.ipynb",
@@ -13,9 +13,9 @@
       "writable": true
     }
   ],
-  "created": "2023-02-03T13:32:30.946602Z",
+  "created": "2023-02-08T20:28:26.346831Z",
   "format": "json",
-  "last_modified": "2023-02-03T13:32:30.946602Z",
+  "last_modified": "2023-02-08T20:28:26.346831Z",
   "mimetype": null,
   "name": "auto_mayavi_examples",
   "path": "auto_mayavi_examples",

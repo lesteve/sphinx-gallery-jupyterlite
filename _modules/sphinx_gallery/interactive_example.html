@@ -402,23 +402,33 @@
     <span class="k">return</span> <span class="n">binder_conf</span></div>
 
 
-<div class="viewcode-block" id="configure_jupyterlite_sphinx"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.configure_jupyterlite_sphinx">[docs]</a><span class="k">def</span> <span class="nf">configure_jupyterlite_sphinx</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
-    <span class="n">jupyterlite_is_enabled</span> <span class="o">=</span> <span class="s1">&#39;jupyterlite_sphinx&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">jupyterlite_is_enabled</span><span class="p">:</span>
+<div class="viewcode-block" id="pre_configure_jupyterlite_sphinx"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx">[docs]</a><span class="k">def</span> <span class="nf">pre_configure_jupyterlite_sphinx</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="n">is_jupyterlite_enabled</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;jupyterlite_sphinx&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span>
+        <span class="ow">and</span> <span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">,</span> <span class="p">{})</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
         <span class="k">return</span>
 
-    <span class="n">jupyterlite_contents</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="n">app</span><span class="o">.</span><span class="n">outdir</span><span class="p">,</span>
-            <span class="s1">&#39;jupyterlite_contents&#39;</span>
-        <span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="n">config</span><span class="o">.</span><span class="n">jupyterlite_contents</span> <span class="o">=</span> <span class="n">jupyterlite_contents</span>
     <span class="c1"># Do not use notebooks as sources for the documentation. See</span>
     <span class="c1"># https://jupyterlite-sphinx.readthedocs.io/en/latest/configuration.html#disable-the-ipynb-docs-source-binding</span>
     <span class="c1"># for more details</span>
     <span class="n">config</span><span class="o">.</span><span class="n">jupyterlite_bind_ipynb_suffix</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="post_configure_jupyterlite_sphinx"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx">[docs]</a><span class="k">def</span> <span class="nf">post_configure_jupyterlite_sphinx</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_jupyterlite_conf</span><span class="p">(</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Append to jupyterlite_contents in case they have been set in conf.py</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">jupyterlite_contents</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">jupyterlite_contents</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">config</span><span class="o">.</span><span class="n">jupyterlite_contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">][</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">])</span></div>
 
 
 <div class="viewcode-block" id="create_jupyterlite_contents"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.create_jupyterlite_contents">[docs]</a><span class="k">def</span> <span class="nf">create_jupyterlite_contents</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
@@ -428,15 +438,17 @@
     <span class="k">if</span> <span class="n">app</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;readthedocs&#39;</span><span class="p">]:</span>
         <span class="k">return</span>
 
-    <span class="n">jupyterlite_is_enabled</span> <span class="o">=</span> <span class="s1">&#39;jupyterlite_sphinx&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">jupyterlite_is_enabled</span><span class="p">:</span>
-        <span class="k">return</span>
-
     <span class="n">gallery_conf</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">sphinx_gallery_conf</span>
+    <span class="n">is_jupyterlite_enabled</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;jupyterlite_sphinx&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span>
+        <span class="ow">and</span> <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_jupyterlite_enabled</span><span class="p">:</span>
+        <span class="k">return</span>
 
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;copying Jupyterlite contents ...&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
     <span class="n">gallery_dirs</span> <span class="o">=</span> <span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;gallery_dirs&#39;</span><span class="p">)</span>
-    <span class="n">contents_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">outdir</span><span class="p">,</span> <span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">)</span>
+    <span class="n">contents_dir</span> <span class="o">=</span> <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">][</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">]</span>
 
     <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">contents_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">contents_dir</span><span class="p">)</span>
@@ -449,6 +461,10 @@
         <span class="n">length</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">gallery_dirs</span><span class="p">))</span>
 
     <span class="k">for</span> <span class="n">i_folder</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i_folder</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">srcdir</span><span class="p">,</span> <span class="n">i_folder</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">contents_dir</span><span class="p">,</span> <span class="n">i_folder</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
         <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">srcdir</span><span class="p">,</span> <span class="n">i_folder</span><span class="p">),</span>
                         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">contents_dir</span><span class="p">,</span> <span class="n">i_folder</span><span class="p">),</span>
                         <span class="n">ignore</span><span class="o">=</span><span class="n">_remove_ipynb_files</span><span class="p">)</span></div>
@@ -502,18 +518,32 @@
     <span class="k">return</span> <span class="n">rst</span></div>
 
 
-<div class="viewcode-block" id="check_jupyterlite_conf"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.check_jupyterlite_conf">[docs]</a><span class="k">def</span> <span class="nf">check_jupyterlite_conf</span><span class="p">(</span><span class="n">jupyterlite_conf</span><span class="p">):</span>
+<div class="viewcode-block" id="check_jupyterlite_conf"><a class="viewcode-back" href="../../gen_modules/sphinx_gallery.interactive_example.html#sphinx_gallery.interactive_example.check_jupyterlite_conf">[docs]</a><span class="k">def</span> <span class="nf">check_jupyterlite_conf</span><span class="p">(</span><span class="n">jupyterlite_conf</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Check to make sure that the Binder configuration is correct.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">jupyterlite_conf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">jupyterlite_conf</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># app=None can happen for testing</span>
+    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">is_jupyterlite_disabled</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">is_jupyterlite_disabled</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;jupyterlite_sphinx&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span>
+            <span class="ow">or</span> <span class="n">jupyterlite_conf</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">is_jupyterlite_disabled</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jupyterlite_conf</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
             <span class="s1">&#39;`jupyterlite_conf` must be a dictionary&#39;</span><span class="p">)</span>
 
-    <span class="n">jupyterlite_conf</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;use_jupyter_lab&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;use_jupyter_lab&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jupyterlite_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;use_jupyter_lab&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jupyterlite_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">,</span> <span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">srcdir</span><span class="p">,</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;jupyterlite_contents&#39;</span><span class="p">])</span>
 
-    <span class="k">return</span> <span class="n">jupyterlite_conf</span></div>
+    <span class="k">return</span> <span class="n">result</span></div>
 </pre></div>
 
            </div>

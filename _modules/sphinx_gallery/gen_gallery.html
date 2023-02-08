@@ -169,7 +169,8 @@
 <span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">copy_binder_files</span><span class="p">,</span> <span class="n">check_binder_conf</span><span class="p">,</span> <span class="n">check_jupyterlite_conf</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">configure_jupyterlite_sphinx</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">pre_configure_jupyterlite_sphinx</span>
+<span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">post_configure_jupyterlite_sphinx</span>
 <span class="kn">from</span> <span class="nn">.interactive_example</span> <span class="kn">import</span> <span class="n">create_jupyterlite_contents</span>
 <span class="kn">from</span> <span class="nn">.directives</span> <span class="kn">import</span> <span class="n">MiniGallery</span><span class="p">,</span> <span class="n">ImageSg</span><span class="p">,</span> <span class="n">imagesg_addnode</span>
 
@@ -509,8 +510,10 @@
     <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;binder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_binder_conf</span><span class="p">(</span><span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;binder&#39;</span><span class="p">])</span>
 
     <span class="c1"># jupyterlite</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;_complete_gallery_conf&#39;</span><span class="p">,</span> <span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">))</span>
     <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">check_jupyterlite_conf</span><span class="p">(</span>
-        <span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">])</span>
+        <span class="n">gallery_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jupyterlite&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">)</span>
+
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gallery_conf</span><span class="p">[</span><span class="s1">&#39;css&#39;</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="s1">&#39;gallery_conf[&quot;css&quot;] must be list or tuple, got </span><span class="si">%r</span><span class="s1">&#39;</span>
@@ -1299,7 +1302,8 @@
     <span class="c1"># To be on the safe side, set small priority value, so that</span>
     <span class="c1"># configure_jupyterlite_sphinx is called before jupyterlite_sphinx</span>
     <span class="c1"># config-inited</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;config-inited&#39;</span><span class="p">,</span> <span class="n">configure_jupyterlite_sphinx</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;config-inited&#39;</span><span class="p">,</span> <span class="n">pre_configure_jupyterlite_sphinx</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;config-inited&#39;</span><span class="p">,</span> <span class="n">post_configure_jupyterlite_sphinx</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="s1">&#39;sphinx.ext.autodoc&#39;</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">extensions</span><span class="p">:</span>
         <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;autodoc-process-docstring&#39;</span><span class="p">,</span> <span class="n">touch_empty_backreferences</span><span class="p">)</span>

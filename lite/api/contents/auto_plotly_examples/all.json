@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2023-02-03T13:32:30.946602Z",
+      "created": "2023-02-08T20:28:26.346831Z",
       "format": null,
-      "last_modified": "2023-02-03T13:32:22.790591Z",
+      "last_modified": "2023-02-08T20:28:15.166816Z",
       "mimetype": null,
       "name": "plot_0_plotly.ipynb",
       "path": "auto_plotly_examples/plot_0_plotly.ipynb",
@@ -13,9 +13,9 @@
       "writable": true
     }
   ],
-  "created": "2023-02-03T13:32:30.946602Z",
+  "created": "2023-02-08T20:28:26.346831Z",
   "format": "json",
-  "last_modified": "2023-02-03T13:32:30.946602Z",
+  "last_modified": "2023-02-08T20:28:26.346831Z",
   "mimetype": null,
   "name": "auto_plotly_examples",
   "path": "auto_plotly_examples",

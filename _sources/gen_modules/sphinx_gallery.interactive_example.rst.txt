@@ -28,13 +28,6 @@ sphinx_gallery.interactive_example
    .. minigallery:: sphinx_gallery.interactive_example.check_jupyterlite_conf
        :add-heading:
 
-   .. autofunction:: configure_jupyterlite_sphinx
-
-   .. _sphx_glr_backref_sphinx_gallery.interactive_example.configure_jupyterlite_sphinx:
-
-   .. minigallery:: sphinx_gallery.interactive_example.configure_jupyterlite_sphinx
-       :add-heading:
-
    .. autofunction:: copy_binder_files
 
    .. _sphx_glr_backref_sphinx_gallery.interactive_example.copy_binder_files:
@@ -68,6 +61,20 @@ sphinx_gallery.interactive_example
    .. _sphx_glr_backref_sphinx_gallery.interactive_example.gen_jupyterlite_rst:
 
    .. minigallery:: sphinx_gallery.interactive_example.gen_jupyterlite_rst
+       :add-heading:
+
+   .. autofunction:: post_configure_jupyterlite_sphinx
+
+   .. _sphx_glr_backref_sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx:
+
+   .. minigallery:: sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx
+       :add-heading:
+
+   .. autofunction:: pre_configure_jupyterlite_sphinx
+
+   .. _sphx_glr_backref_sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx:
+
+   .. minigallery:: sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx
        :add-heading:
    
    

@@ -107,12 +107,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.check_binder_conf"><code class="docutils literal notranslate"><span class="pre">check_binder_conf()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.check_jupyterlite_conf"><code class="docutils literal notranslate"><span class="pre">check_jupyterlite_conf()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.configure_jupyterlite_sphinx"><code class="docutils literal notranslate"><span class="pre">configure_jupyterlite_sphinx()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.copy_binder_files"><code class="docutils literal notranslate"><span class="pre">copy_binder_files()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.create_jupyterlite_contents"><code class="docutils literal notranslate"><span class="pre">create_jupyterlite_contents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.gen_binder_rst"><code class="docutils literal notranslate"><span class="pre">gen_binder_rst()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.gen_binder_url"><code class="docutils literal notranslate"><span class="pre">gen_binder_url()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.gen_jupyterlite_rst"><code class="docutils literal notranslate"><span class="pre">gen_jupyterlite_rst()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx"><code class="docutils literal notranslate"><span class="pre">post_configure_jupyterlite_sphinx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx"><code class="docutils literal notranslate"><span class="pre">pre_configure_jupyterlite_sphinx()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -185,16 +186,11 @@ experience of users who click Binder links.</p>
 
 <span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-check-binder-conf"></span><dl class="py function">
 <dt class="sig sig-object py" id="sphinx_gallery.interactive_example.check_jupyterlite_conf">
-<span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">check_jupyterlite_conf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jupyterlite_conf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#check_jupyterlite_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.check_jupyterlite_conf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">check_jupyterlite_conf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jupyterlite_conf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#check_jupyterlite_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.check_jupyterlite_conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check to make sure that the Binder configuration is correct.</p>
 </dd></dl>
 
 <span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-check-jupyterlite-conf"></span><dl class="py function">
-<dt class="sig sig-object py" id="sphinx_gallery.interactive_example.configure_jupyterlite_sphinx">
-<span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">configure_jupyterlite_sphinx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#configure_jupyterlite_sphinx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.configure_jupyterlite_sphinx" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-configure-jupyterlite-sphinx"></span><dl class="py function">
 <dt class="sig sig-object py" id="sphinx_gallery.interactive_example.copy_binder_files">
 <span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">copy_binder_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#copy_binder_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.copy_binder_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy all Binder requirements and notebooks files.</p>
@@ -281,7 +277,17 @@ generated.</p></li>
 </dl>
 </dd></dl>
 
-<span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-gen-jupyterlite-rst"></span></section>
+<span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-gen-jupyterlite-rst"></span><dl class="py function">
+<dt class="sig sig-object py" id="sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx">
+<span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">post_configure_jupyterlite_sphinx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#post_configure_jupyterlite_sphinx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.post_configure_jupyterlite_sphinx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-post-configure-jupyterlite-sphinx"></span><dl class="py function">
+<dt class="sig sig-object py" id="sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx">
+<span class="sig-prename descclassname"><span class="pre">sphinx_gallery.interactive_example.</span></span><span class="sig-name descname"><span class="pre">pre_configure_jupyterlite_sphinx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_gallery/interactive_example.html#pre_configure_jupyterlite_sphinx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_gallery.interactive_example.pre_configure_jupyterlite_sphinx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="sphx-glr-backref-sphinx-gallery-interactive-example-pre-configure-jupyterlite-sphinx"></span></section>
 </section>
 
 
