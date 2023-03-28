@@ -220,42 +220,42 @@ must be set to ``True`` in the sphinx gallery
      </style>
 
      <div class="animation">
-       <img id="_anim_imgb6e834da3b4e4ac8b79c5517283ddf1a">
+       <img id="_anim_img4d38f94462d34b0a88cea4938daba6dd">
        <div class="anim-controls">
-         <input id="_anim_sliderb6e834da3b4e4ac8b79c5517283ddf1a" type="range" class="anim-slider"
+         <input id="_anim_slider4d38f94462d34b0a88cea4938daba6dd" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="animb6e834da3b4e4ac8b79c5517283ddf1a.set_frame(parseInt(this.value));">
+                oninput="anim4d38f94462d34b0a88cea4938daba6dd.set_frame(parseInt(this.value));">
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim4d38f94462d34b0a88cea4938daba6dd.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim4d38f94462d34b0a88cea4938daba6dd.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim4d38f94462d34b0a88cea4938daba6dd.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim4d38f94462d34b0a88cea4938daba6dd.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim4d38f94462d34b0a88cea4938daba6dd.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim4d38f94462d34b0a88cea4938daba6dd.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim4d38f94462d34b0a88cea4938daba6dd.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim4d38f94462d34b0a88cea4938daba6dd.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="animb6e834da3b4e4ac8b79c5517283ddf1a.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim4d38f94462d34b0a88cea4938daba6dd.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectb6e834da3b4e4ac8b79c5517283ddf1a"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select4d38f94462d34b0a88cea4938daba6dd"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_b6e834da3b4e4ac8b79c5517283ddf1a"
+           <input type="radio" name="state" value="once" id="_anim_radio1_4d38f94462d34b0a88cea4938daba6dd"
                   >
-           <label for="_anim_radio1_b6e834da3b4e4ac8b79c5517283ddf1a">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_b6e834da3b4e4ac8b79c5517283ddf1a"
+           <label for="_anim_radio1_4d38f94462d34b0a88cea4938daba6dd">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_4d38f94462d34b0a88cea4938daba6dd"
                   checked>
-           <label for="_anim_radio2_b6e834da3b4e4ac8b79c5517283ddf1a">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_b6e834da3b4e4ac8b79c5517283ddf1a"
+           <label for="_anim_radio2_4d38f94462d34b0a88cea4938daba6dd">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_4d38f94462d34b0a88cea4938daba6dd"
                   >
-           <label for="_anim_radio3_b6e834da3b4e4ac8b79c5517283ddf1a">Reflect</label>
+           <label for="_anim_radio3_4d38f94462d34b0a88cea4938daba6dd">Reflect</label>
          </form>
        </div>
      </div>
@@ -265,13 +265,13 @@ must be set to ``True`` in the sphinx gallery
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_imgb6e834da3b4e4ac8b79c5517283ddf1a";
-         var slider_id = "_anim_sliderb6e834da3b4e4ac8b79c5517283ddf1a";
-         var loop_select_id = "_anim_loop_selectb6e834da3b4e4ac8b79c5517283ddf1a";
+         var img_id = "_anim_img4d38f94462d34b0a88cea4938daba6dd";
+         var slider_id = "_anim_slider4d38f94462d34b0a88cea4938daba6dd";
+         var loop_select_id = "_anim_loop_select4d38f94462d34b0a88cea4938daba6dd";
          var frames = new Array(25);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAehUlEQVR4nO3df2zV9b348VehtFXvbRdh1iKVlV3d2Mh1lzYw6iXLvFqDxoWb\
      3cjijahXkzXbLkKvu4Nxo4MsababmTs3wW2CZgl6uf6Mf/Q6+se9WIT7A25ZlkHiIlwLs5UUY4u6\
      FYHP/cNLv9+uxQH2133xeCTnj/P282lfJ2/qefI5p4eSoiiKAAAgrSkTPQAAAGNL8AEAJCf4AACS\
@@ -412,7 +412,7 @@ must be set to ``True`` in the sphinx gallery
      CT4AgOQEHwBAcoIPACC5/wENWvS1VLmxfAAAAABJRU5ErkJggg==\
      "
        frames[1] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAehUlEQVR4nO3df2zV9b348VehtFXvbRdh1iKVlV3d2Mh1lzYw6iXLvFqDxoWb\
      3cjijahXkzXbLkKvu4Nxo4MsababmTs3wW2CZgl6uf6Mf/Q6+se9WIT7A25ZlkHiIlwLs5UUY4u6\
      FYHP/cNLv9+uxQH2133xeCTnj/P282lfJ2/qefI5p4eSoiiKAAAgrSkTPQAAAGNL8AEAJCf4AACS\
@@ -553,7 +553,7 @@ must be set to ``True`` in the sphinx gallery
      CT4AgOQEHwBAcoIPACC5/wENWvS1VLmxfAAAAABJRU5ErkJggg==\
      "
        frames[2] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApdUlEQVR4nO3dfXBU9b3H8c8mSxLAblSQECDGYH2IpYVLKEgw45VKuEjx4miJ\
      RQ0gWONTING20HS0MHeaae8kIkhCkQDXTqQRBKrTVImtQiDYSkwYKxmxwiWhJGYClySAJpCc+8dp\
      YmMC5nHP7m/fr5kdzp6eQ747p3HfnN0967IsyxIAAACMFeT0AAAAABhYBB8AAIDhCD4AAADDEXwA\
@@ -743,7 +743,7 @@ must be set to ``True`` in the sphinx gallery
      AAAwHMEHAABgOIIPAADAcAQfAACA4f4fE8SjesmGuIQAAAAASUVORK5CYII=\
      "
        frames[3] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAxWElEQVR4nO3de3RU5b3/8c/kzsUJAhICxBBEbgJBwoESZXlqNRY9tLi0pt5Q\
      CtV4KZDUnkLpTwunq1ntWUREAYsEbD3IwQtSPSdHjecoBMG20BCRpIKCBCQRA5IEhASS/ftjdwJj\
      LuQyM3vmmfdrrVnzZLv37G/WFubD8+z9PC7LsiwBAADAWBFOFwAAAAD/IvABAAAYjsAHAABgOAIf\
@@ -969,7 +969,7 @@ must be set to ``True`` in the sphinx gallery
      AAAASUVORK5CYII=\
      "
        frames[4] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAA1KUlEQVR4nO3de3RV5Z3/8c/JnYsJChIChBBEMNwlDBSQ5dRqHPRHh44OtNai\
      FKqpWiCpTqX0p5Xp+uXXziIiCngDnPaHDF4ZO5NR4xoVFG0LDRdJBBEkQRPTwJAExASS/fvj6UkI\
      SSCXc/bZ5znv11pnnefs7Ms3a0vOx+fZ+9k+x3EcAQAAwFpRoS4AAAAAwUXgAwAAsByBDwAAwHIE\
@@ -1212,7 +1212,7 @@ must be set to ``True`` in the sphinx gallery
      fiGfZz4n/AAAAABJRU5ErkJggg==\
      "
        frames[5] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAA4wElEQVR4nO3de3hV1Z3/8c9JQhJAExQkBAgYRJC7EgYKlHG0EosODh0tWC8o\
      hWqqFkiqrZT+vP06w1P7EBEFvAFO/SGD99GZVI0zVVC0LRiuiSCCBjQxDQxJQEgg2b8/Vk9CTAK5\
      nLP3Puu8X89znrOy2fvsb7oL5+Nae68VcBzHEQAAAKwV43UBAAAACC8CHwAAgOUIfAAAAJYj8AEA\
@@ -1471,7 +1471,7 @@ must be set to ``True`` in the sphinx gallery
      AABY7v8D72pTrjL4SVoAAAAASUVORK5CYII=\
      "
        frames[6] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAA+T0lEQVR4nO3deXxU9b3/8fckIQmCCcoSwh72HSUIBaRWK7FosVi94IoiqKkL\
      EKqtiD8VWm+u9oKIAlpZbC1SVJRqL1Vjq4KiVjAsQmQRJKCJaaAkYUsgOb8/vp2EkASyzJxz5szr\
      +XjMY04OZ+Z84kjy5rv6LMuyBAAAAM+KcLoAAAAABBeBDwAAwOMIfAAAAB5H4AMAAPA4Ah8AAIDH\
@@ -1755,7 +1755,7 @@ must be set to ``True`` in the sphinx gallery
      Hvf/AUT3W2KfKkMMAAAAAElFTkSuQmCC\
      "
        frames[7] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABHSUlEQVR4nO3deViVZf7H8c8BBFwCSxPXFC33pcI0LaepSRprbJyp0baxTCva\
      3CZLszRtIW00s9TKraYxx2ybmnFKml+lZTVpuKRkmRZakqEjkCkoPr8/vnNEBJQDZ314v67rXOfm\
      8VluPAmf7tXjOI4jAAAAuFZUqCsAAACAwCLwAQAAuByBDwAAwOUIfAAAAC5H4AMAAHA5Ah8AAIDL\
@@ -2079,7 +2079,7 @@ must be set to ``True`` in the sphinx gallery
      cgQ+AAAAlyPwAQAAuByBDwAAwOX+H+WXLUiC8HU7AAAAAElFTkSuQmCC\
      "
        frames[8] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABSDElEQVR4nO3de3zO9f/H8ee1zTanTU5zjDmfpYmQTt+sr/oqlS8dRVQ6OZUi\
      peggFSk5lNAJScq3+qqsvhWlE80hlnNGWRrZRIa5fn+8fpcZG7u267TPHvfbbbd9XK7rc725qj17\
      H14vl9vtdgsAAACOFRbsAQAAAMC/CHwAAAAOR+ADAABwOAIfAACAwxH4AAAAHI7ABwAA4HAEPgAA\
@@ -2452,7 +2452,7 @@ must be set to ``True`` in the sphinx gallery
      rkJggg==\
      "
        frames[9] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABTwklEQVR4nO3deZzO9frH8fc9M2bGNiPbGEuMfV8aUUqdOtFRR2k50XJEVNNm\
      KyJFpKQiKUvZ2iRFOSoVdSpKdcJYQmTJUCYhM7Ib9++P63cbwwxzz9zrd17Px2Me853bvXzGjXn7\
      LNflcrvdbgEAAMCxIoI9AAAAAPgXgQ8AAMDhCHwAAAAOR+ADAABwOAIfAACAwxH4AAAAHI7ABwAA\
@@ -2832,7 +2832,7 @@ must be set to ``True`` in the sphinx gallery
      HI7ABwAA4HAEPgAAAIcj8AEAADjc/wEkJwmXBAuLIQAAAABJRU5ErkJggg==\
      "
        frames[10] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABiWUlEQVR4nO3dd1iV9fsH8PcBBFzgRhwpOHErbjNbYubXsrI0NdQ0pdym5sqV\
      SlaaI8VyNtCcmRaaWKm4yoHiwImJpqhoAi4QeH5/3L/jERly5nPOc96v6+Li4XjGB4/Fm8+4b52i\
      KAqIiIiISLNc1B4AEREREVkXAx8RERGRxjHwEREREWkcAx8RERGRxjHwEREREWkcAx8RERGRxjHw\
@@ -3278,7 +3278,7 @@ must be set to ``True`` in the sphinx gallery
      oSSkFwAAAABJRU5ErkJggg==\
      "
        frames[11] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABsyklEQVR4nO3dd1jVdf8G8PsAAi5wJc7cA7fiLrPlykezsszsMU0rW66yNEzT\
      SrLS1HLlyJ5ylalZuStHmZaKI0VTMdEUZ4ITBL6/P+7f8YCicjj7e+7XdXFxOJ7zPR88Fjef8X5b\
      DMMwICIiIiKmFeDpAYiIiIiIaynwiYiIiJicAp+IiIiIySnwiYiIiJicAp+IiIiIySnwiYiIiJic\
@@ -3771,7 +3771,7 @@ must be set to ``True`` in the sphinx gallery
      AABJRU5ErkJggg==\
      "
        frames[12] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABtIklEQVR4nO3de3zO9f8G8OveZpvT5pQhcj6fm7OkE5IvqZRSiah0cirCRIR1\
      IpRTjh2QQihnlUM5FOaQjTAZZYTMnDbbPr8/rt/tNobdu8+f+3o+Hnvs3u2+P/d7u9Uu78PrZTEM\
      w4CIiIiImFaApwcgIiIiIq6lwCciIiJicgp8IiIiIianwCciIiJicgp8IiIiIianwCciIiJicgp8\
@@ -4265,7 +4265,7 @@ must be set to ``True`` in the sphinx gallery
      ERExOQU+EREREZNT4BMRERExuf8DoRJhc+GH63sAAAAASUVORK5CYII=\
      "
        frames[13] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAABtPElEQVR4nO3de3zO9f8G8OveZpvT5pQhcj6fm7OkE5IvqZRSiah0cirCRISl\
      IpRTjh2QQihnlUM5FOaQjTAZMRqZOW22fX5/XL/bbQzb7vPnvp6Pxx67d7vvz/3ebrXL+/B6WQzD\
      MCAiIiIipuXn7gGIiIiIiHMp8ImIiIiYnAKfiIiIiMkp8ImIiIiYnAKfiIiIiMkp8ImIiIiYnAKf\
@@ -4760,7 +4760,7 @@ must be set to ``True`` in the sphinx gallery
      AABJRU5ErkJggg==\
      "
        frames[14] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAB2XUlEQVR4nO3dd1jV9fsG8PsAAi5wJWqae29xpGa21MxvZmVZVqZpZstVmopp\
      miMrzZErZ5ma5bbclXvkwD1SMdEUFU3EBQKf3x/373hEETlw5of7dV1cHI5nvOFQ5+Y9nsdiGIYB\
      ERERETEtH3cPQEREREScS4FPRERExOQU+ERERERMToFPRERExOQU+ERERERMToFPRERExOQU+ERE\
@@ -5296,7 +5296,7 @@ must be set to ``True`` in the sphinx gallery
      AABJRU5ErkJggg==\
      "
        frames[15] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACBTklEQVR4nO3dd1jV5fsH8PcBBFzgxj1wbxS3mTZc+c2sLMvKNK2szFWWq0xz\
      ZMPUUjNnQ81yV86Ge+TAkSNn4gAVTcQFAp/fH+/f8YCgjDP58H5dF5fnHA/nPHDQc3M/z33fFsMw\
      DIiIiIiIaXm5ewEiIiIi4lwK+ERERERMTgGfiIiIiMkp4BMRERExOQV8IiIiIiangE9ERETE5BTw\
@@ -5881,7 +5881,7 @@ must be set to ``True`` in the sphinx gallery
      w1G2orJmAAAAAElFTkSuQmCC\
      "
        frames[16] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACDZklEQVR4nO3dd3jT1dsG8Dttactq2WXKkL2hbETwpyxRcKAoKoKgVEWWoixF\
      kCGoiCggMh2AKEtQposNMsoGmTJbppSyWtp+3z/uN6ahhY7sb+/PdfUiCWly2hRy95zzPMdiGIYB\
      ERERETEtP08PQERERERcS4FPRERExOQU+ERERERMToFPRERExOQU+ERERERMToFPRERExOQU+ERE\
@@ -6475,7 +6475,7 @@ must be set to ``True`` in the sphinx gallery
      ERExOQU+EREREZNT4BMRERExuf8Dwxws6aenEXQAAAAASUVORK5CYII=\
      "
        frames[17] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACFPUlEQVR4nO3dZ3SUVdsF4D1JSEJL6KGXSO8QOiJYaPKCDUVREQQFC9VGUwQp\
      goqI0qRaaEoTlGqjg5TQQarUhCohtIQkz/djf+MkJKRNf7KvtbKYGSYzJ5nA7Jxz7vtYDMMwICIi\
      IiKm5ePuAYiIiIiIcynwiYiIiJicAp+IiIiIySnwiYiIiJicAp+IiIiIySnwiYiIiJicAp+IiIiI\
@@ -7077,7 +7077,7 @@ must be set to ``True`` in the sphinx gallery
      ERERk1PgExERETE5BT4RERERk1PgExERETE5BT4RERERk/s/KmBc3lc0pLcAAAAASUVORK5CYII=\
      "
        frames[18] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACREklEQVR4nO3dd3iT1fsG8LsDWlbL3lv2hrIRcQEi4v6KE1FQcbEcTEWQIajI\
      kCVTZYgKIipDXGyQvVH2LlBGKavz/P64fzENbaFpZt/en+vqRRLevDlt0ubJOed5ngBjjIGIiIiI\
      WFagrwcgIiIiIp6lgE9ERETE4hTwiYiIiFicAj4RERERi1PAJyIiImJxCvhERERELE4Bn4iIiIjF\
@@ -7733,7 +7733,7 @@ must be set to ``True`` in the sphinx gallery
      RU5ErkJggg==\
      "
        frames[19] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACVqUlEQVR4nO3dd3RUVdcG8CcFQg+9I0WQXkNHxAoigvUVKxZQsdFsNAtIEQsC\
      SlGkWABRAUWliI0iRXpHQZCaAAEJoaWe74/nu06GJJBk2p2b57dWVmYmkzsnmUnunn3O3ifEGGMg\
      IiIiIo4VGugBiIiIiIhvKeATERERcTgFfCIiIiIOp4BPRERExOEU8ImIiIg4nAI+EREREYdTwCci\
@@ -8409,7 +8409,7 @@ must be set to ``True`` in the sphinx gallery
      IiIiDqeAT0RERMThFPCJiIiIONz/AR1ztjOWvTaVAAAAAElFTkSuQmCC\
      "
        frames[20] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACaxElEQVR4nO3dd3RUVdcG8CcFEmroHSmC9Bo6IlawgfUVK6KgYqPZaBZQQCyI\
      KKDSbICoIKJSxEaRJr2LFOkBQgmhJSQ53x/Pd52ZFJLJ9Jvnt1ZWMpM7d04yk8yec87eO8wYYyAi\
      IiIithUe6AGIiIiIiG8p4BMRERGxOQV8IiIiIjangE9ERETE5hTwiYiIiNicAj4RERERm1PAJyIi\
@@ -9108,7 +9108,7 @@ must be set to ``True`` in the sphinx gallery
      zSngExEREbE5BXwiIiIiNvd/8/+AFwo32AIAAAAASUVORK5CYII=\
      "
        frames[21] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACaz0lEQVR4nO3dd3RUVdcG8CcFElpC70gRpNfQEbGCqGB9xYoooKhIs9EsoIAV\
      EQVEmg0QCyAqRWwUKdI7IkV6gICE0BKSnO+P57tOJoVkMv3m+a2Vlczkzp2TzCSz55yz9w4xxhiI\
      iIiIiG2F+nsAIiIiIuJdCvhEREREbE4Bn4iIiIjNKeATERERsTkFfCIiIiI2p4BPRERExOYU8ImI\
@@ -9807,7 +9807,7 @@ must be set to ``True`` in the sphinx gallery
      ERERm1PAJyIiImJzCvhEREREbE4Bn4iIiIjN/R900tptRJtsBgAAAABJRU5ErkJggg==\
      "
        frames[22] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACgrklEQVR4nO3dd3RUVdcG8CcFQg+9I0WQXkMRELGCDayvWLGhoiLNRlOKFLEg\
      ooCKgA0RFbBSBBsgvSNFpPcSIqEnJDnfH893vTMkIZlMv3l+a2UlM5m5c5KZ5O455+y9I4wxBiIi\
      IiLiWJHBHoCIiIiI+JcCPhERERGHU8AnIiIi4nAK+EREREQcTgGfiIiIiMMp4BMRERFxOAV8IiIi\
@@ -10533,7 +10533,7 @@ must be set to ``True`` in the sphinx gallery
      4QAAAABJRU5ErkJggg==\
      "
        frames[23] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACjXUlEQVR4nO3dd3RUVdcG8CcFEkAIvSNFkF6DICBiBcsLdrFiQ0VFmo2mAlLE\
      gogCKgqIImIBK0WwAVKkgxSR3ktAQk9Icr4/nu96Z9In02+e31pZyUxm7pxkJrl7zjl77whjjIGI\
      iIiIOFZksAcgIiIiIv6lgE9ERETE4RTwiYiIiDicAj4RERERh1PAJyIiIuJwCvhEREREHE4Bn4iI\
@@ -11271,7 +11271,7 @@ must be set to ``True`` in the sphinx gallery
      Wgd4KgAAAABJRU5ErkJggg==\
      "
        frames[24] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAACoJUlEQVR4nO2dd3gUZdvFT3oASei9S6+BIFXEBqi8YAFFUVABFZEOSpVeBBUR\
      pShSRAFRukpXaVKl995JgBAIgUDaPt8f5xtmN3377uT+XVeu7E5mZ58t2Tl7l3P7KKUUBEEQBEEQ\
      BMPi6+4FCIIgCIIgCM5FBJ8gCIIgCILBEcEnCIIgCIJgcETwCYIgCIIgGBwRfIIgCIIgCAZHBJ8g\
@@ -12034,7 +12034,7 @@ must be set to ``True`` in the sphinx gallery
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             animb6e834da3b4e4ac8b79c5517283ddf1a = new Animation(frames, img_id, slider_id, 100.0,
+             anim4d38f94462d34b0a88cea4938daba6dd = new Animation(frames, img_id, slider_id, 100.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -12070,7 +12070,7 @@ must be set to ``True`` in the sphinx gallery
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.528 seconds)
+   **Total running time of the script:** ( 0 minutes  3.837 seconds)
 
 **Estimated memory usage:**  9 MB
 

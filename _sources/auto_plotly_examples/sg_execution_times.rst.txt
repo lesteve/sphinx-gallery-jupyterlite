@@ -6,8 +6,8 @@
 
 Computation times
 =================
-**00:01.374** total execution time for **auto_plotly_examples** files:
+**00:01.600** total execution time for **auto_plotly_examples** files:
 
 +------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_plotly_examples_plot_0_plotly.py` (``plot_0_plotly.py``) | 00:01.374 | 19.9 MB |
+| :ref:`sphx_glr_auto_plotly_examples_plot_0_plotly.py` (``plot_0_plotly.py``) | 00:01.600 | 39.2 MB |
 +------------------------------------------------------------------------------+-----------+---------+
