@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
+      "created": "2023-03-28T07:25:46.212843Z",
       "format": null,
-      "last_modified": "2023-02-08T20:28:26.346831Z",
+      "last_modified": "2023-03-28T07:25:46.212843Z",
       "mimetype": null,
       "name": "auto_pyvista_examples",
       "path": "auto_pyvista_examples",
@@ -14,9 +14,9 @@
     },
     {
       "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
+      "created": "2023-03-28T07:25:46.212843Z",
       "format": null,
-      "last_modified": "2023-02-08T20:28:26.346831Z",
+      "last_modified": "2023-03-28T07:25:46.212843Z",
       "mimetype": null,
       "name": "tutorials",
       "path": "tutorials",
@@ -26,21 +26,9 @@
     },
     {
       "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
+      "created": "2023-03-28T07:25:46.212843Z",
       "format": null,
-      "last_modified": "2023-02-08T20:28:26.346831Z",
-      "mimetype": null,
-      "name": "auto_mayavi_examples",
-      "path": "auto_mayavi_examples",
-      "size": null,
-      "type": "directory",
-      "writable": true
-    },
-    {
-      "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
-      "format": null,
-      "last_modified": "2023-02-08T20:28:26.346831Z",
+      "last_modified": "2023-03-28T07:25:46.212843Z",
       "mimetype": null,
       "name": "auto_examples",
       "path": "auto_examples",
@@ -50,9 +38,9 @@
     },
     {
       "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
+      "created": "2023-03-28T07:25:46.212843Z",
       "format": null,
-      "last_modified": "2023-02-08T20:28:26.346831Z",
+      "last_modified": "2023-03-28T07:25:46.212843Z",
       "mimetype": null,
       "name": "auto_plotly_examples",
       "path": "auto_plotly_examples",
@@ -61,9 +49,9 @@
       "writable": true
     }
   ],
-  "created": "2023-02-08T20:28:26.346831Z",
+  "created": "2023-03-28T07:25:46.212843Z",
   "format": "json",
-  "last_modified": "2023-02-08T20:28:26.346831Z",
+  "last_modified": "2023-03-28T07:25:46.212843Z",
   "mimetype": null,
   "name": "",
   "path": "",

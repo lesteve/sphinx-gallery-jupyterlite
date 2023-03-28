@@ -2,20 +2,20 @@
   "content": [
     {
       "content": null,
-      "created": "2023-02-08T20:28:26.346831Z",
+      "created": "2023-03-28T07:25:46.212843Z",
       "format": null,
-      "last_modified": "2023-02-08T20:28:15.166816Z",
+      "last_modified": "2023-03-28T07:25:45.124841Z",
       "mimetype": null,
       "name": "plot_0_plotly.ipynb",
       "path": "auto_plotly_examples/plot_0_plotly.ipynb",
-      "size": 4203,
+      "size": 4364,
       "type": "notebook",
       "writable": true
     }
   ],
-  "created": "2023-02-08T20:28:26.346831Z",
+  "created": "2023-03-28T07:25:46.212843Z",
   "format": "json",
-  "last_modified": "2023-02-08T20:28:26.346831Z",
+  "last_modified": "2023-03-28T07:25:46.212843Z",
   "mimetype": null,
   "name": "auto_plotly_examples",
   "path": "auto_plotly_examples",
